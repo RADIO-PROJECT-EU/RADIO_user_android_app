@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="app.radiouser.gstavrinos.radio_user_app.MainActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/radio_background"
+        android:alpha="0.5"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:drawableTop="@drawable/exit"
+        android:id="@+id/exit_button"
+        android:text="Exit"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="125dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/smart_home_button"
+        android:text="Smart Home"
+        android:drawableTop="@drawable/home"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/facebook_button"
+        android:drawableTop="@drawable/facebook"
+        android:text="Friends"/>
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/smart_home_button"
+        android:id="@+id/guide_me_button"
+        android:drawableTop="@drawable/guideme"
+        android:text="Guide me"/>
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
