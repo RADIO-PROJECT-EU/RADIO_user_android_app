@@ -29,14 +29,13 @@ public class WebviewActivity extends AppCompatActivity {
         webview.getSettings().setJavaScriptEnabled(true);
 
 
-        //TODO I need to test this on android N
         webview.setWebViewClient(new WebViewClient() {
 
             @RequiresApi(Build.VERSION_CODES.N)
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request){
                 final Uri uri = request.getUrl();
-                return true;
+                return false;
             }
 
 

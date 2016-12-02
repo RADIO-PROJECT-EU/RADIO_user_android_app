@@ -20,6 +20,7 @@
         android:layout_centerHorizontal="true"
         android:drawableTop="@drawable/exit"
         android:id="@+id/exit_button"
+        android:background="@drawable/buttons"
         android:text="Exit"/>
 
     <ScrollView
@@ -38,6 +39,7 @@
         android:layout_marginLeft="20dp"
         android:id="@+id/smart_home_button"
         android:text="Smart Home"
+        android:background="@drawable/buttons"
         android:drawableTop="@drawable/home"/>
 
     <Button
@@ -48,6 +50,7 @@
         android:layout_alignParentRight="true"
         android:id="@+id/facebook_button"
         android:drawableTop="@drawable/facebook"
+        android:background="@drawable/buttons"
         android:text="Friends"/>
 
     <Button
@@ -56,6 +59,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/smart_home_button"
+        android:background="@drawable/buttons"
         android:id="@+id/guide_me_button"
         android:drawableTop="@drawable/guideme"
         android:text="Guide me"/>
