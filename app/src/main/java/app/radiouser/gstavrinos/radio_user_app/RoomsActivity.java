@@ -7,9 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import org.ros.address.InetAddressFactory;
 import org.ros.android.MasterChooser;
 import org.ros.android.RosActivity;
 import org.ros.node.NodeConfiguration;
+import org.ros.node.NodeMain;
 import org.ros.node.NodeMainExecutor;
 
 public class RoomsActivity extends RosActivity {
@@ -17,7 +19,7 @@ public class RoomsActivity extends RosActivity {
     NodeMainExecutor nme;
 
     protected RoomsActivity(){
-        super("Robot connection","Robot connection");
+        super("Robot connection","Robot connection","http://172.17.20.101:11311");
         //TODO we need a way to bypass the MasterChooser activity (or just modify the library)
     }
 
@@ -41,6 +43,18 @@ public class RoomsActivity extends RosActivity {
 
     @Override
     protected void init(NodeMainExecutor nodeMainExecutor) {
+        nme = nodeMainExecutor;
+        //TODO delete from here when done testing
+        sendGoal();
+    }
 
+    private void sendGoal() {
+
+        NodeMain node = new GoalPublisher();
+
+        NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(InetAddressFactory.newNonLoopback().getHostAddress());
+        nodeConfiguration.setMasterUri(getMasterUri());
+
+        nme.execute(node, nodeConfiguration);
     }
 }
