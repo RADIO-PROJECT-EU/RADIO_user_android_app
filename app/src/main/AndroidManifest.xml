@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WebviewActivity" />
-        <activity android:name=".RoomsActivity"></activity>
+        <activity android:name=".RoomsActivity" />
+        <activity android:name=".SettingsActivity"></activity>
     </application>
 
 </manifest>

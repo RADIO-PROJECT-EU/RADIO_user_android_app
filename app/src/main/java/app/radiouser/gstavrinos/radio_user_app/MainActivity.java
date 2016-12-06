@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Button facebook_button = (Button)findViewById(R.id.facebook_button);
         Button exit_button = (Button)findViewById(R.id.exit_button);
         Button guide_me_button = (Button)findViewById(R.id.guide_me_button);
+        Button settings_button = (Button)findViewById(R.id.settings_button);
 
         facebook_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RoomsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        settings_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });

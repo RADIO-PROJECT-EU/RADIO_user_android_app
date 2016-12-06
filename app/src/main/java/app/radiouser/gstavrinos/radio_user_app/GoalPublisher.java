@@ -6,30 +6,43 @@ import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.NodeMain;
 import org.ros.node.topic.Publisher;
+import move_base_msgs.MoveBaseActionGoal;
 
-import std_msgs.Int32;
 
 public class GoalPublisher extends AbstractNodeMain implements NodeMain {
+
+  public boolean new_goal = false;
+  public String goal_topic = "move_base_simple/goal";
+  public String robot_frame = "base_link";
+  public double x,y,z = 0;
 
   @Override
   public GraphName getDefaultNodeName() {
     return GraphName.of("GoalPublisher");
   }
 
-  //TODO send an int for now. We will publish the goal here!
   @Override
-  public void onStart(ConnectedNode connectedNode) {
-    final Publisher<Int32> publisher = connectedNode.newPublisher(GraphName.of("test_int"), std_msgs.Int32._TYPE);
+  public void onStart(final ConnectedNode connectedNode) {
+    final Publisher<MoveBaseActionGoal> publisher = connectedNode.newPublisher(GraphName.of(goal_topic), MoveBaseActionGoal._TYPE);
+    new_goal = false;
 
     final CancellableLoop loop = new CancellableLoop() {
       @Override
       protected void loop() throws InterruptedException {
 
-        std_msgs.Int32 stop = publisher.newMessage();
-        stop.setData(1);
-        publisher.publish(stop);
+        if(new_goal) {
+          move_base_msgs.MoveBaseActionGoal goal_msgs = publisher.newMessage();
+          goal_msgs.getHeader().setFrameId(robot_frame);
+          goal_msgs.getHeader().setStamp(connectedNode.getCurrentTime());
+          goal_msgs.getGoalId().setId("Android_Goal_Publisher_" + connectedNode.getCurrentTime().toString());
+          goal_msgs.getGoal().getTargetPose().getPose().getPosition().setX(x);
+          goal_msgs.getGoal().getTargetPose().getPose().getPosition().setY(y);
+          goal_msgs.getGoal().getTargetPose().getPose().getOrientation().setZ(z);
+          publisher.publish(goal_msgs);
+          new_goal = false;
+        }
 
-        Thread.sleep(500);
+        Thread.sleep(1000);
       }
     };
     connectedNode.executeCancellableLoop(loop);

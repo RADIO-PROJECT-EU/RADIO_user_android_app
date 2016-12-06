@@ -22,5 +22,6 @@ dependencies {
     compile 'org.ros.rosjava_messages:std_msgs:0.5.9'
     compile 'org.ros.rosjava_messages:rosgraph_msgs:1.11.1'
     compile 'org.ros.rosjava_messages:sensor_msgs:1.11.7'
+    compile 'org.ros.rosjava_messages:move_base_msgs:[1.11,1.12)'
 
 }

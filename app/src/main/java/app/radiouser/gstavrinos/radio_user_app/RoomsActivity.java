@@ -17,20 +17,55 @@ import org.ros.node.NodeMainExecutor;
 public class RoomsActivity extends RosActivity {
 
     NodeMainExecutor nme;
+    GoalPublisher node;
 
     protected RoomsActivity(){
         super("Robot connection","Robot connection","http://172.17.20.101:11311");
-        //TODO we need a way to bypass the MasterChooser activity (or just modify the library)
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rooms); Button back_button  = (Button)findViewById(R.id.back_button);
+        setContentView(R.layout.activity_rooms);
+
+        Button back_button  = (Button)findViewById(R.id.back_button);
+        Button kitchen_button  = (Button)findViewById(R.id.kitchen_button);
+        Button myroom_button  = (Button)findViewById(R.id.myroom_button);
+        Button common_area_button  = (Button)findViewById(R.id.common_area_button);
+
+        myroom_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                node.x = 1;
+                node.y = 1;
+                node.z = 16;
+                node.new_goal = true;
+            }
+        });
+
+        kitchen_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                node.x = 2;
+                node.y = 2;
+                node.z = 4;
+                node.new_goal = true;
+            }
+        });
+
+        common_area_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                node.x = 3;
+                node.y = 3;
+                node.z = 1.777;
+                node.new_goal = true;
+            }
+        });
+
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO we also need to close the ros node here
                 RoomsActivity.this.onBackPressed();
             }
         });
@@ -44,17 +79,13 @@ public class RoomsActivity extends RosActivity {
     @Override
     protected void init(NodeMainExecutor nodeMainExecutor) {
         nme = nodeMainExecutor;
-        //TODO delete from here when done testing
-        sendGoal();
+        initNode();
     }
 
-    private void sendGoal() {
-
-        NodeMain node = new GoalPublisher();
-
+    private void initNode() {
+        node = new GoalPublisher();
         NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(InetAddressFactory.newNonLoopback().getHostAddress());
         nodeConfiguration.setMasterUri(getMasterUri());
-
         nme.execute(node, nodeConfiguration);
     }
 }
