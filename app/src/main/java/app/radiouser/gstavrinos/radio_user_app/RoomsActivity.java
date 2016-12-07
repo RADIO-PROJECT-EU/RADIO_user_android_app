@@ -20,7 +20,7 @@ public class RoomsActivity extends RosActivity {
     GoalPublisher node;
 
     protected RoomsActivity(){
-        super("Robot connection","Robot connection","http://172.17.20.101:11311");
+        super("Robot connection","Robot connection","http://172.11.20.101:11311");
     }
 
     @Override

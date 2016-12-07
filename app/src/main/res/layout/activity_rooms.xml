@@ -14,6 +14,7 @@
         android:layout_centerHorizontal="true"
         android:text="Back to Home"
         android:drawableTop="@drawable/back"
+        android:background="@drawable/buttons"
         android:id="@+id/back_button"/>
 
     <ScrollView
@@ -31,6 +32,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/myroom_button"
+                android:background="@drawable/buttons"
                 android:drawableTop="@drawable/myroom"
                 android:text="My Room"/>
 
@@ -38,6 +40,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/buttons"
                 android:layout_marginRight="20dp"
                 android:layout_alignParentRight="true"
                 android:id="@+id/kitchen_button"
@@ -48,6 +51,7 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
+                android:background="@drawable/buttons"
                 android:layout_marginLeft="20dp"
                 android:layout_below="@+id/myroom_button"
                 android:id="@+id/common_area_button"
