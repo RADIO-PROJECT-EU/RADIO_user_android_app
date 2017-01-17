@@ -1,6 +1,7 @@
 package app.radiouser.gstavrinos.radio_user_app;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,15 +19,19 @@ public class RoomsActivity extends RosActivity {
 
     NodeMainExecutor nme;
     GoalPublisher node;
+    String masterURI = "http://172.11.20.101:11311";
 
     protected RoomsActivity(){
-        super("Robot connection","Robot connection","http://172.11.20.101:11311");
+        super("Robot connection", "Robot connection", "http://172.11.20.101:11311");
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rooms);
+
+        SharedPreferences prefs = this.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        masterURI= prefs.getString("master_uri", "http://172.11.20.101:11311");
 
         Button back_button  = (Button)findViewById(R.id.back_button);
         Button kitchen_button  = (Button)findViewById(R.id.kitchen_button);

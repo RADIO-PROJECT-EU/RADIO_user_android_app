@@ -10,6 +10,7 @@ import android.os.Build;
 import android.provider.Settings;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         int wifi_result = checkWifiOnAndConnected();
 
-        if(wifi_result < 0 && !Build.FINGERPRINT.startsWith("generic")){
+        if(wifi_result < 0 && !Build.FINGERPRINT.contains("generic")){
             String message = "";
             if(wifi_result == -2){
                 message = "Wi-Fi is not enabled. Press Ok to enter the Wi-Fi settings, or Cancel to exit the application.";
