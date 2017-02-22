@@ -12,9 +12,10 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp"
         android:layout_centerHorizontal="true"
-        android:text="Back to Home"
-        android:drawableTop="@drawable/back"
-        android:background="@drawable/buttons"
+        android:text="BACK TO HOME"
+        android:drawableTop="@drawable/back2"
+        android:background="#00FFFFFF"
+        android:textColor="@drawable/button_text"
         android:id="@+id/back_button"/>
 
     <ScrollView
@@ -32,31 +33,34 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/myroom_button"
-                android:background="@drawable/buttons"
-                android:drawableTop="@drawable/myroom"
-                android:text="My Room"/>
+                android:textColor="@drawable/button_text"
+                android:background="#00FFFFFF"
+                android:drawableTop="@drawable/my_room"
+                android:text="MY ROOM"/>
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/buttons"
+                android:background="#00FFFFFF"
                 android:layout_marginRight="20dp"
+                android:textColor="@drawable/button_text"
                 android:layout_alignParentRight="true"
                 android:id="@+id/kitchen_button"
-                android:text="Kitchen"
-                android:drawableTop="@drawable/restaurant"/>
+                android:text="KITCHEN"
+                android:drawableTop="@drawable/kitchen"/>
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/buttons"
+                android:background="#00FFFFFF"
+                android:textColor="@drawable/button_text"
                 android:layout_marginLeft="20dp"
                 android:layout_below="@+id/myroom_button"
                 android:id="@+id/common_area_button"
-                android:drawableTop="@drawable/common_area"
-                android:text="Common Area"/>
+                android:drawableTop="@drawable/common_area2"
+                android:text="COMMON AREA"/>
 
 
         </RelativeLayout>
