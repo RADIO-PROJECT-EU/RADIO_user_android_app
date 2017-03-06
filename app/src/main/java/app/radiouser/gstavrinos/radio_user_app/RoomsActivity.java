@@ -15,14 +15,20 @@ import org.ros.node.NodeConfiguration;
 import org.ros.node.NodeMain;
 import org.ros.node.NodeMainExecutor;
 
+import java.util.Iterator;
+import java.util.Vector;
+
 public class RoomsActivity extends RosActivity {
 
     NodeMainExecutor nme;
     GoalPublisher node;
-    String masterURI = "http://172.11.20.101:11311";
+    RoomSubscriber node2;
+    //String masterURI = "http://172.11.20.101:11311";
+    Vector<Room> rooms;
 
     protected RoomsActivity(){
-        super("Robot connection", "Robot connection", "http://172.11.20.101:11311");
+        super("Robot connection", "Robot connection", "http://172.17.20.102:11311");
+        //startNodeExecutor();
     }
 
     @Override
@@ -30,13 +36,45 @@ public class RoomsActivity extends RosActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rooms);
 
-        SharedPreferences prefs = this.getSharedPreferences("settings", Context.MODE_PRIVATE);
-        masterURI= prefs.getString("master_uri", "http://172.11.20.101:11311");
+        //SharedPreferences prefs = this.getSharedPreferences("settings", Context.MODE_PRIVATE);
+        //masterURI= prefs.getString("master_uri", "http://172.11.20.101:11311");
 
         Button back_button  = (Button)findViewById(R.id.back_button);
         Button kitchen_button  = (Button)findViewById(R.id.kitchen_button);
         Button myroom_button  = (Button)findViewById(R.id.myroom_button);
         Button common_area_button  = (Button)findViewById(R.id.common_area_button);
+
+        rooms = new Vector<>();
+
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+
+                while (true) {
+                    try {
+                        sleep(500);
+                        if (node2.rooms.compareTo("") != 0) { // keep asking for the rooms until you get them!
+                            fillRooms();
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    for(Room r : rooms){
+                                        Log.e(":)",r.getRoom());
+                                    }
+                                    // TODO create the buttons here
+                                }
+                            });
+                            break;
+                        }
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+
+        thread.start();
 
         myroom_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,8 +127,22 @@ public class RoomsActivity extends RosActivity {
 
     private void initNode() {
         node = new GoalPublisher();
+        node2 = new RoomSubscriber();
         NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(InetAddressFactory.newNonLoopback().getHostAddress());
         nodeConfiguration.setMasterUri(getMasterUri());
         nme.execute(node, nodeConfiguration);
+        nme.execute(node2, nodeConfiguration);
+    }
+
+    private void fillRooms(){
+        try {
+            String r[] = node2.rooms.split(",", -1);
+            for (int i = 0; i < r.length-4; i++) {
+                rooms.add(new Room(r[i],Float.parseFloat(r[i+1]), Float.parseFloat(r[i+2]), Float.parseFloat(r[i+3]), r[i+4]));
+            }
+        }
+        catch(Exception e){
+            //TODO show an error message to the user (toast)?
+        }
     }
 }
