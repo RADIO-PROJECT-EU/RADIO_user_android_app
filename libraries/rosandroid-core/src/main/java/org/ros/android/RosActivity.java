@@ -101,7 +101,7 @@ public abstract class RosActivity extends Activity {
     super.onDestroy();
   }
 
-  public void startNodeExecutor(){
+  private void startNodeExecutor(){
     URI uri;
     try {
       uri = new URI(masterUri);
