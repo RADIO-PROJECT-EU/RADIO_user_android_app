@@ -12,8 +12,8 @@ import move_base_msgs.MoveBaseActionGoal;
 public class GoalPublisher extends AbstractNodeMain implements NodeMain {
 
   public boolean new_goal = false;
-  public String goal_topic = "move_base_simple/goal";
-  public String robot_frame = "base_link";
+  private String goal_topic = "move_base_simple/goal";
+  private String robot_frame = "base_link";
   public double x,y,z = 0;
 
   @Override

@@ -3,10 +3,22 @@ package app.radiouser.gstavrinos.radio_user_app;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import org.ros.address.InetAddressFactory;
 import org.ros.android.MasterChooser;
@@ -15,6 +27,7 @@ import org.ros.node.NodeConfiguration;
 import org.ros.node.NodeMain;
 import org.ros.node.NodeMainExecutor;
 
+import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -27,7 +40,7 @@ public class RoomsActivity extends RosActivity {
     Vector<Room> rooms;
 
     protected RoomsActivity(){
-        super("Robot connection", "Robot connection", "http://172.17.20.102:11311");
+        super("Robot connection", "Robot connection", "http://192.168.1.111:11311"); // let's assume that the main controller has this IP.
         //startNodeExecutor();
     }
 
@@ -40,9 +53,9 @@ public class RoomsActivity extends RosActivity {
         //masterURI= prefs.getString("master_uri", "http://172.11.20.101:11311");
 
         Button back_button  = (Button)findViewById(R.id.back_button);
-        Button kitchen_button  = (Button)findViewById(R.id.kitchen_button);
-        Button myroom_button  = (Button)findViewById(R.id.myroom_button);
-        Button common_area_button  = (Button)findViewById(R.id.common_area_button);
+        //Button kitchen_button  = (Button)findViewById(R.id.kitchen_button);
+        //Button myroom_button  = (Button)findViewById(R.id.myroom_button);
+        //Button common_area_button  = (Button)findViewById(R.id.common_area_button);
 
         rooms = new Vector<>();
 
@@ -58,10 +71,70 @@ public class RoomsActivity extends RosActivity {
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    for(Room r : rooms){
-                                        Log.e(":)",r.getRoom());
+                                    try {
+                                        Resources res = getResources();
+                                        int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 120, res.getDisplayMetrics());
+                                        RelativeLayout rl = (RelativeLayout) findViewById(R.id.button_layout);
+                                        int btn_cnt = 0;
+                                        Vector<Integer> v = new Vector<>();
+                                        findViewById(R.id.loading_txt).setVisibility(View.INVISIBLE);
+                                        for (Room r : rooms) {
+                                            Log.e(":)", r.getRoom());
+                                            final Button b = new Button(getApplicationContext());
+                                            b.setWidth(px);
+                                            b.setHeight(px);
+                                            v.add(View.generateViewId());
+                                            b.setId(v.elementAt(btn_cnt));
+                                            b.setTextSize(14);
+                                            Field fieldID = R.drawable.class.getDeclaredField(r.getImage());
+                                            RelativeLayout.LayoutParams p = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                                            p.setMargins(0, px/6, 0, 0);
+                                            if (btn_cnt > 1){
+                                                p.addRule(RelativeLayout.BELOW, v.elementAt(btn_cnt-2));
+                                            }
+                                            if (btn_cnt % 2 == 0){
+                                                p.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+                                            }
+                                            else{
+                                                p.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                                            }
+                                            b.setLayoutParams(p);
+                                            b.setCompoundDrawablesWithIntrinsicBounds(null, ContextCompat.getDrawable(getApplicationContext(), fieldID.getInt(fieldID)), null, null);
+                                            b.setBackgroundColor(Color.argb(0, 255, 255, 255));
+                                            b.setTextColor(Color.rgb(0, 0, 0));
+                                            b.setText(r.getName().toUpperCase());
+                                            b.setPadding(0, 0, 0, 0);
+                                            b.setOnTouchListener(new View.OnTouchListener() {
+                                                @Override
+                                                public boolean onTouch(View view, MotionEvent motionEvent) {
+                                                    if(motionEvent.getAction() == MotionEvent.ACTION_DOWN){
+                                                        b.setTextColor(Color.rgb(51, 187, 51));
+                                                    }
+                                                    else if(motionEvent.getAction() == MotionEvent.ACTION_UP){
+                                                        b.setTextColor(Color.rgb(0, 0, 0));
+                                                    }
+                                                    return false;
+                                                }
+                                            });
+                                            final Room r_ = r;
+                                            b.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    node.x = r_.getX();
+                                                    node.y = r_.getY();
+                                                    node.z = r_.getZ();
+                                                    node.new_goal = true;
+                                                }
+                                            });
+
+
+                                            rl.addView(b);
+                                            btn_cnt++;
+                                        }
                                     }
-                                    // TODO create the buttons here
+                                    catch (Exception e){
+                                        e.printStackTrace();
+                                    }
                                 }
                             });
                             break;
@@ -76,7 +149,7 @@ public class RoomsActivity extends RosActivity {
 
         thread.start();
 
-        myroom_button.setOnClickListener(new View.OnClickListener() {
+        /*myroom_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 node.x = 1;
@@ -104,7 +177,7 @@ public class RoomsActivity extends RosActivity {
                 node.z = 1.777;
                 node.new_goal = true;
             }
-        });
+        });*/
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,10 +185,6 @@ public class RoomsActivity extends RosActivity {
                 RoomsActivity.this.onBackPressed();
             }
         });
-
-        /*
-        * TODO Instead of reading the rooms from the xml, I will have to listen to a ros topic coming from the server, and create the rooms dynamically inside the scrollview!
-        */
 
     }
 
@@ -137,12 +206,12 @@ public class RoomsActivity extends RosActivity {
     private void fillRooms(){
         try {
             String r[] = node2.rooms.split(",", -1);
-            for (int i = 0; i < r.length-4; i++) {
+            for (int i = 0; i < r.length-4; i+=5) {
                 rooms.add(new Room(r[i],Float.parseFloat(r[i+1]), Float.parseFloat(r[i+2]), Float.parseFloat(r[i+3]), r[i+4]));
             }
         }
         catch(Exception e){
-            //TODO show an error message to the user (toast)?
+            e.printStackTrace();
         }
     }
 }
