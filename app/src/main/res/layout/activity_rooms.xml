@@ -12,7 +12,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp"
         android:layout_centerHorizontal="true"
-        android:text="ΠΙΣΩ ΣΤΗΝ ΑΡΧΗ"
+        android:text="BACK TO HOME"
         android:drawableTop="@drawable/back2"
         android:textSize="14sp"
         android:background="#00FFFFFF"
@@ -43,7 +43,7 @@
                 android:textSize="14dp"
                 android:layout_marginBottom="0sp"
                 android:onClick="btnMsg"
-                android:text="ΤΟ ΔΩΜΑΤΙΟ ΜΟΥ"/>
+                android:text="MY ROOM"/>
 
             <Button
                 android:layout_width="120dp"
@@ -57,7 +57,7 @@
                 android:onClick="btnMsg"
                 android:layout_alignParentRight="true"
                 android:id="@+id/kitchen_button"
-                android:text="ΚΟΥΖΙΝΑ"
+                android:text="KITCHEN"
                 android:textSize="14sp"
                 android:drawableTop="@drawable/kitchen"/>
 
@@ -75,7 +75,7 @@
                 android:id="@+id/common_area_button"
                 android:drawableTop="@drawable/common_area2"
                 android:textSize="14sp"
-                android:text="ΚΟΙΝΟΣ ΧΩΡΟΣ"/>
+                android:text="COMMON AREA"/>
 
 
         </RelativeLayout>

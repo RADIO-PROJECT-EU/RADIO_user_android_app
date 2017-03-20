@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void helpMsg(View v){
-        Toast.makeText(getApplicationContext(), "Ο γιατρός έρχεται!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "The doctor is coming!", Toast.LENGTH_LONG).show();
     }
 
 }

@@ -22,7 +22,7 @@
         android:id="@+id/exit_button"
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
-        android:text="ΕΞΟΔΟΣ"/>
+        android:text="EXIT"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
         android:layout_marginLeft="20dp"
         android:id="@+id/smart_home_button"
         android:padding="0sp"
-        android:text="ΕΞΥΠΝΟ ΣΠΙΤΙ"
+        android:text="SMART HOME"
         android:textColor="@drawable/button_text"
         android:background="#00FFFFFF"
         android:drawableTop="@drawable/smart_home"/>
@@ -56,7 +56,7 @@
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
         android:drawableTop="@drawable/friends"
-        android:text="ΦΙΛΟΙ"/>
+        android:text="FRIENDS"/>
 
         <Button
             android:layout_width="120dp"
@@ -69,7 +69,7 @@
             android:textColor="@drawable/button_text"
             android:id="@+id/guide_me_button"
             android:drawableTop="@drawable/guide_me"
-            android:text="ΚΑΘΟΔΗΓΗΣΗ"/>
+            android:text="GUIDE ME"/>
 
         <Button
             android:layout_width="120dp"
@@ -84,7 +84,7 @@
             android:id="@+id/helpme_button"
             android:onClick="helpMsg"
             android:drawableTop="@drawable/help"
-            android:text="ΒΟΗΘΕΙΑ"/>
+            android:text="HELP"/>
 
     </RelativeLayout>
     </ScrollView>

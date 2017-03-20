@@ -222,6 +222,6 @@ public class RoomsActivity extends RosActivity {
     }
 
     public void btnMsg(View v){
-        Toast.makeText(getApplicationContext(), "Το ρομπότ έρχεται!", Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "The robot is coming!", Toast.LENGTH_LONG).show();
     }
 }
