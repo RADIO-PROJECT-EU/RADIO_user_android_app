@@ -6,7 +6,8 @@ import org.ros.node.AbstractNodeMain;
 import org.ros.node.ConnectedNode;
 import org.ros.node.NodeMain;
 import org.ros.node.topic.Publisher;
-import move_base_msgs.MoveBaseActionGoal;
+//import move_base_msgs.MoveBaseActionGoal;
+import geometry_msgs.PoseStamped;
 
 
 public class GoalPublisher extends AbstractNodeMain implements NodeMain {
@@ -23,7 +24,7 @@ public class GoalPublisher extends AbstractNodeMain implements NodeMain {
 
   @Override
   public void onStart(final ConnectedNode connectedNode) {
-    final Publisher<MoveBaseActionGoal> publisher = connectedNode.newPublisher(GraphName.of(goal_topic), MoveBaseActionGoal._TYPE);
+    final Publisher<PoseStamped> publisher = connectedNode.newPublisher(GraphName.of(goal_topic), PoseStamped._TYPE);
     new_goal = false;
 
     final CancellableLoop loop = new CancellableLoop() {
@@ -31,13 +32,13 @@ public class GoalPublisher extends AbstractNodeMain implements NodeMain {
       protected void loop() throws InterruptedException {
 
         if(new_goal) {
-          move_base_msgs.MoveBaseActionGoal goal_msgs = publisher.newMessage();
+          geometry_msgs.PoseStamped goal_msgs = publisher.newMessage();
           goal_msgs.getHeader().setFrameId(robot_frame);
           goal_msgs.getHeader().setStamp(connectedNode.getCurrentTime());
-          goal_msgs.getGoalId().setId("Android_Goal_Publisher_" + connectedNode.getCurrentTime().toString());
-          goal_msgs.getGoal().getTargetPose().getPose().getPosition().setX(x);
-          goal_msgs.getGoal().getTargetPose().getPose().getPosition().setY(y);
-          goal_msgs.getGoal().getTargetPose().getPose().getOrientation().setZ(z);
+          //goal_msgs.getGoalId().setId("Android_Goal_Publisher_" + connectedNode.getCurrentTime().toString());
+          goal_msgs.getPose().getPosition().setX(x);
+          goal_msgs.getPose().getPosition().setY(y);
+          goal_msgs.getPose().getOrientation().setZ(z);
           publisher.publish(goal_msgs);
           new_goal = false;
         }

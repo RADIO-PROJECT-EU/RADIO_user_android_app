@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.ros.address.InetAddressFactory;
 import org.ros.android.MasterChooser;
@@ -40,7 +41,7 @@ public class RoomsActivity extends RosActivity {
     Vector<Room> rooms;
 
     protected RoomsActivity(){
-        super("Robot connection", "Robot connection", "http://192.168.1.111:11311"); // let's assume that the main controller has this IP.
+        super("Robot connection", "Robot connection", "http://172.21.13.111:11311"); // let's assume that the main controller has this IP.
         //startNodeExecutor();
     }
 
@@ -77,7 +78,7 @@ public class RoomsActivity extends RosActivity {
                                         RelativeLayout rl = (RelativeLayout) findViewById(R.id.button_layout);
                                         int btn_cnt = 0;
                                         Vector<Integer> v = new Vector<>();
-                                        findViewById(R.id.loading_txt).setVisibility(View.INVISIBLE);
+                                        //findViewById(R.id.loading_txt).setVisibility(View.INVISIBLE);
                                         for (Room r : rooms) {
                                             Log.e(":)", r.getRoom());
                                             final Button b = new Button(getApplicationContext());
@@ -191,7 +192,12 @@ public class RoomsActivity extends RosActivity {
     @Override
     protected void init(NodeMainExecutor nodeMainExecutor) {
         nme = nodeMainExecutor;
-        initNode();
+        try {
+            initNode();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void initNode() {
@@ -213,5 +219,9 @@ public class RoomsActivity extends RosActivity {
         catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void btnMsg(View v){
+        Toast.makeText(getApplicationContext(), "Το ρομπότ έρχεται!", Toast.LENGTH_LONG).show();
     }
 }

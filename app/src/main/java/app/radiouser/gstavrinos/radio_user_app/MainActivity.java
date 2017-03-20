@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -135,6 +136,10 @@ public class MainActivity extends AppCompatActivity {
             finish();
             startActivity(intent_);
         }
+    }
+
+    public void helpMsg(View v){
+        Toast.makeText(getApplicationContext(), "Ο γιατρός έρχεται!", Toast.LENGTH_LONG).show();
     }
 
 }
