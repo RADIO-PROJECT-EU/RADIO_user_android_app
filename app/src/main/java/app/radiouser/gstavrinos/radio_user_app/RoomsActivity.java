@@ -40,7 +40,7 @@ public class RoomsActivity extends RosActivity {
     Vector<Room> rooms;
 
     protected RoomsActivity(){
-        super("Robot connection", "Robot connection", "http://192.168.1.111:11311"); // let's assume that the main controller has this IP.
+        super("Robot connection", "Robot connection", "http://172.21.13.111:11311"); // let's assume that the main controller has this IP.
         //startNodeExecutor();
     }
 
@@ -191,7 +191,12 @@ public class RoomsActivity extends RosActivity {
     @Override
     protected void init(NodeMainExecutor nodeMainExecutor) {
         nme = nodeMainExecutor;
-        initNode();
+        try {
+            initNode();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private void initNode() {
