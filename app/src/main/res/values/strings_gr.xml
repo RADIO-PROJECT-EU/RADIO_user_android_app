@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="exit_gr">ΕΞΟΔΟΣ</string>
+    <string name="yes_gr">ΝΑΙ</string>
+    <string name="no_gr">ΟΧΙ</string>
+    <string name="robot_coming_gr">ΤΟ ΡΟΜΠΟΤ ΕΡΧΕΤΑΙ!</string>
+    <string name="robot_check_gr">ΕΙΣΤΕ ΣΙΓΟΥΡΟΙ ΟΤΙ ΘΕΛΕΤΕ ΝΑ ΚΑΛΕΣΕΤΕ ΤΟ ΡΟΜΠΟΤ;</string>
+    <string name="doctor_coming_gr">Ο ΓΙΑΤΡΟΣ ΕΝΗΜΕΡΩΘΗΚΕ!</string>
+    <string name="doctor_check_gr">ΕΙΣΤΕ ΣΙΓΟΥΡΟΙ ΟΤΙ ΘΕΛΕΤΕ ΝΑ ΚΑΛΕΣΕΤΕ ΤΟ ΓΙΑΤΡΟ;</string>
+    <string name="kitchen_gr">ΚΟΥΖΙΝΑ</string>
+    <string name="my_room_gr">ΤΟ ΔΩΜΑΤΙΟ ΜΟΥ</string>
+    <string name="friends_gr">ΦΙΛΟΙ</string>
+    <string name="help_gr">ΒΟΗΘΕΙΑ</string>
+    <string name="guideme_gr">ΚΑΘΟΔΗΓΗΣΗ</string>
+    <string name="back_gr">ΠΙΣΩ ΣΤΗΝ ΑΡΧΙΚΗ</string>
+    <string name="smarthome_gr">ΕΞΥΠΝΟ ΣΠΙΤΙ</string>
+    <string name="commonarea_gr">ΚΟΙΝΟΣ ΧΩΡΟΣ</string>
+    <string name="mainmenu_gr">ΑΡΧΙΚΗ ΟΘΟΝΗ</string>
+    <string name="ok_gr">ΕΝΤΑΞΕΙ</string>
+    <string name="cancel_gr">ΑΚΥΡΩΣΗ</string>
+    <string name="sure_gr">ΕΙΣΤΕ ΣΙΓΟΥΡΟΙ;</string>
+
+</resources>

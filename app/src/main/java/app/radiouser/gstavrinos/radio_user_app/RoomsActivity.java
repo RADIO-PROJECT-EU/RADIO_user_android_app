@@ -1,7 +1,9 @@
 package app.radiouser.gstavrinos.radio_user_app;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
@@ -9,6 +11,8 @@ import android.content.res.XmlResourceParser;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
+import android.media.AudioManager;
+import android.media.ToneGenerator;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
@@ -16,6 +20,8 @@ import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -39,6 +45,7 @@ public class RoomsActivity extends RosActivity {
     RoomSubscriber node2;
     //String masterURI = "http://172.11.20.101:11311";
     Vector<Room> rooms;
+    ToneGenerator toneG;
 
     protected RoomsActivity(){
         super("Robot connection", "Robot connection", "http://172.21.13.111:11311"); // let's assume that the main controller has this IP.
@@ -48,12 +55,16 @@ public class RoomsActivity extends RosActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_rooms);
 
         //SharedPreferences prefs = this.getSharedPreferences("settings", Context.MODE_PRIVATE);
         //masterURI= prefs.getString("master_uri", "http://172.11.20.101:11311");
 
         Button back_button  = (Button)findViewById(R.id.back_button);
+        toneG = new ToneGenerator(AudioManager.STREAM_ALARM, 100);
         //Button kitchen_button  = (Button)findViewById(R.id.kitchen_button);
         //Button myroom_button  = (Button)findViewById(R.id.myroom_button);
         //Button common_area_button  = (Button)findViewById(R.id.common_area_button);
@@ -183,6 +194,7 @@ public class RoomsActivity extends RosActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
                 RoomsActivity.this.onBackPressed();
             }
         });
@@ -222,6 +234,36 @@ public class RoomsActivity extends RosActivity {
     }
 
     public void btnMsg(View v){
-        Toast.makeText(getApplicationContext(), "Το ρομπότ έρχεται!", Toast.LENGTH_LONG).show();
+        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+        new AlertDialog.Builder(RoomsActivity.this)
+                .setTitle(R.string.sure_gr)
+                .setMessage(R.string.robot_check_gr)
+                .setPositiveButton(R.string.yes_gr, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //TODO send goal to robot
+                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                        new AlertDialog.Builder(RoomsActivity.this)
+                                .setMessage(R.string.robot_coming_gr)
+                                .setPositiveButton(R.string.ok_gr, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                                    }
+                                })
+                                .setNegativeButton(R.string.cancel_gr, new DialogInterface.OnClickListener() {
+                                    //TODO cancel robot goal
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                                    }
+                                })
+                                .show();
+                    }
+                })
+                .setNegativeButton(R.string.no_gr, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_info)
+                .show();
     }
 }
