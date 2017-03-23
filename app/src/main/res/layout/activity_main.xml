@@ -6,19 +6,21 @@
     android:layout_height="match_parent"
     tools:context="app.radiouser.gstavrinos.radio_user_app.MainActivity">
 
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/radio_background"
-        android:alpha="0.5"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="MAIN MENU"
+        android:textSize="40sp"
+        android:id="@+id/title"/>
 
     <Button
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:drawableTop="@drawable/back2"
+        android:textSize="20sp"
         android:id="@+id/exit_button"
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
@@ -27,17 +29,26 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="125dp">
+        android:layout_above="@id/exit_button"
+        android:layout_below="@+id/title">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/t1"/>
 
     <Button
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:layout_toStartOf="@id/t1"
+        android:textSize="20sp"
         android:id="@+id/smart_home_button"
         android:padding="0sp"
         android:text="SMART HOME"
@@ -46,40 +57,53 @@
         android:drawableTop="@drawable/smart_home"/>
 
     <Button
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:layout_marginStart="25dp"
+        android:layout_toEndOf="@id/t1"
         android:padding="0sp"
-        android:layout_marginRight="20dp"
-        android:layout_alignParentRight="true"
         android:id="@+id/facebook_button"
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
         android:drawableTop="@drawable/friends"
         android:text="FRIENDS"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/smart_home_button"
+            android:id="@+id/t2"/>
+
         <Button
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
             android:layout_marginTop="20dp"
             android:padding="0sp"
-            android:layout_marginLeft="20dp"
-            android:layout_below="@+id/smart_home_button"
+            android:layout_toStartOf="@id/t2"
+            android:layout_marginEnd="25dp"
+            android:layout_below="@+id/t2"
             android:background="#00FFFFFF"
             android:textColor="@drawable/button_text"
             android:id="@+id/guide_me_button"
             android:drawableTop="@drawable/guide_me"
+            android:layout_alignStart="@id/smart_home_button"
             android:text="GUIDE ME"/>
 
         <Button
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:padding="0sp"
-            android:layout_marginRight="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/facebook_button"
+            android:layout_marginStart="25dp"
+            android:layout_toEndOf="@id/t2"
+            android:textSize="20sp"
+            android:layout_below="@+id/t2"
             android:background="#00FFFFFF"
+            android:layout_alignEnd="@id/facebook_button"
             android:textColor="@drawable/button_text"
             android:id="@+id/helpme_button"
             android:onClick="helpMsg"
