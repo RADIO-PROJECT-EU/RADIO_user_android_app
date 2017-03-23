@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="GUIDE ME"
+        android:text="@string/guideme_en"
         android:textSize="40sp"
         android:id="@+id/title"/>
 
@@ -20,7 +20,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp"
         android:layout_centerHorizontal="true"
-        android:text="BACK TO HOME"
+        android:text="@string/back_en"
         android:drawableTop="@drawable/back2"
         android:textSize="20sp"
         android:background="#00FFFFFF"
@@ -60,7 +60,7 @@
                 android:textSize="20sp"
                 android:layout_marginBottom="0sp"
                 android:onClick="btnMsg"
-                android:text="MY ROOM"/>
+                android:text="@string/my_room_en"/>
 
             <Button
                 android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
                 android:textColor="@drawable/button_text"
                 android:onClick="btnMsg"
                 android:id="@+id/kitchen_button"
-                android:text="KITCHEN"
+                android:text="@string/kitchen_en"
                 android:textSize="20sp"
                 android:drawableTop="@drawable/kitchen"/>
 
@@ -102,7 +102,7 @@
                 android:id="@+id/common_area_button"
                 android:drawableTop="@drawable/common_area2"
                 android:textSize="20sp"
-                android:text="COMMON\nAREA"/>
+                android:text="@string/commonarea_en"/>
 
 
         </RelativeLayout>

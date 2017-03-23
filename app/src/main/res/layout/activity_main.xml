@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="MAIN MENU"
+        android:text="@string/mainmenu_en"
         android:textSize="40sp"
         android:id="@+id/title"/>
 
@@ -24,7 +24,7 @@
         android:id="@+id/exit_button"
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
-        android:text="EXIT"/>
+        android:text="@string/exit_en"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
         android:textSize="20sp"
         android:id="@+id/smart_home_button"
         android:padding="0sp"
-        android:text="SMART HOME"
+        android:text="@string/smarthome_en"
         android:textColor="@drawable/button_text"
         android:background="#00FFFFFF"
         android:drawableTop="@drawable/smart_home"/>
@@ -68,7 +68,7 @@
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
         android:drawableTop="@drawable/friends"
-        android:text="FRIENDS"/>
+        android:text="@string/friends_en"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,7 +91,7 @@
             android:id="@+id/guide_me_button"
             android:drawableTop="@drawable/guide_me"
             android:layout_alignStart="@id/smart_home_button"
-            android:text="GUIDE ME"/>
+            android:text="@string/guideme_en"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
             android:id="@+id/helpme_button"
             android:onClick="helpMsg"
             android:drawableTop="@drawable/help"
-            android:text="HELP"/>
+            android:text="@string/help_en"/>
 
     </RelativeLayout>
     </ScrollView>
