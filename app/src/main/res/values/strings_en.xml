@@ -1,12 +1,12 @@
 <resources>
 
     <string name="exit_en">EXIT</string>
-    <string name="yes_en">YES</string>
-    <string name="no_en">NO</string>
-    <string name="robot_coming_en">THE ROBOT IS COMING!</string>>
-    <string name="robot_check_en">ARE YOU SURE YOU WANT TO CALL THE ROBOT?</string>
-    <string name="doctor_coming_en">THE DOCTOR HAS BEEN NOTIFIED!</string>
-    <string name="doctor_check_en">ARE YOU SURE YOU WANT TO NOTIFY THE DOCTOR?</string>
+    <string name="yes_en">Yes</string>
+    <string name="no_en">No</string>
+    <string name="robot_coming_en">The robot is coming!</string>>
+    <string name="robot_check_en">By clicking the Yes button again the robot will come. Click No if you do not want the robot to come.</string>
+    <string name="doctor_coming_en">The doctor has been notified!</string>
+    <string name="doctor_check_en">By clicking the Yes button again we will notify the doctor. Click No if you do not want the doctor to come.</string>
     <string name="kitchen_en">KITCHEN</string>
     <string name="my_room_en">MY ROOM</string>
     <string name="friends_en">FRIENDS</string>
@@ -16,8 +16,8 @@
     <string name="smarthome_en">SMART HOME</string>
     <string name="commonarea_en">COMMON AREA</string>
     <string name="mainmenu_en">MAIN MENU</string>
-    <string name="ok_en">OK</string>
-    <string name="cancel_en">CANCEL</string>
-    <string name="sure_en">ARE YOU SURE?</string>
+    <string name="ok_en">Ok</string>
+    <string name="cancel_en">Cancel</string>
+    <string name="sure_en">Are you sure?</string>
 
 </resources>
