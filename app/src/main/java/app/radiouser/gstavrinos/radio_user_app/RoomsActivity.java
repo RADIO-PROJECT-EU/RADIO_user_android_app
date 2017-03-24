@@ -86,7 +86,7 @@ public class RoomsActivity extends RosActivity {
                                     try {
                                         Resources res = getResources();
                                         int px = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 120, res.getDisplayMetrics());
-                                        RelativeLayout rl = (RelativeLayout) findViewById(R.id.button_layout);
+                                        /*RelativeLayout rl = (RelativeLayout) findViewById(R.id.button_layout);
                                         int btn_cnt = 0;
                                         Vector<Integer> v = new Vector<>();
                                         //findViewById(R.id.loading_txt).setVisibility(View.INVISIBLE);
@@ -142,7 +142,7 @@ public class RoomsActivity extends RosActivity {
 
                                             rl.addView(b);
                                             btn_cnt++;
-                                        }
+                                        }*/
                                     }
                                     catch (Exception e){
                                         e.printStackTrace();
