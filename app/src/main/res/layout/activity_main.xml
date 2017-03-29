@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:textAllCaps="false"
         android:text="@string/mainmenu_gr"
         android:textSize="40sp"
         android:id="@+id/title"/>
@@ -22,6 +23,7 @@
         android:drawableTop="@drawable/back2"
         android:textSize="20sp"
         android:id="@+id/exit_button"
+        android:textAllCaps="false"
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
         android:text="@string/exit_gr"/>
@@ -39,7 +41,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical">
 
-            <TableRow>
+            <TableRow android:layout_marginBottom="20dp">
 
 
                 <Button
@@ -49,6 +51,7 @@
                     android:textSize="20sp"
                     android:id="@+id/smart_home_button"
                     android:padding="0sp"
+                    android:textAllCaps="false"
                     android:text="@string/smarthome_gr"
                     android:textColor="@drawable/button_text"
                     android:background="#00FFFFFF"
@@ -58,8 +61,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:layout_marginStart="25dp"
                     android:padding="0sp"
+                    android:textAllCaps="false"
                     android:id="@+id/facebook_button"
                     android:background="#00FFFFFF"
                     android:textColor="@drawable/button_text"
@@ -75,9 +78,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:padding="0sp"
-                    android:layout_marginTop="2dp"
                     android:layout_marginEnd="25dp"
+                    android:textAllCaps="false"
+                    android:padding="0sp"
                     android:background="#00FFFFFF"
                     android:textColor="@drawable/button_text"
                     android:id="@+id/guide_me_button"
@@ -88,11 +91,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="0sp"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginStart="25dp"
                     android:textSize="20sp"
                     android:layout_below="@+id/facebook_button"
                     android:background="#00FFFFFF"
+                    android:textAllCaps="false"
                     android:layout_alignEnd="@id/facebook_button"
                     android:textColor="@drawable/button_text"
                     android:id="@+id/helpme_button"

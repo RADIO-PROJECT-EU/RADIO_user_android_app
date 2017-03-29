@@ -64,7 +64,7 @@ public class WebviewActivity extends AppCompatActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                 WebviewActivity.this.onBackPressed();
             }
         });

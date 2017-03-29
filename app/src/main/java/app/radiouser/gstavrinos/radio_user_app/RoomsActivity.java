@@ -194,7 +194,7 @@ public class RoomsActivity extends RosActivity {
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                 RoomsActivity.this.onBackPressed();
             }
         });
@@ -234,25 +234,25 @@ public class RoomsActivity extends RosActivity {
     }
 
     public void btnMsg(View v){
-        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
         new AlertDialog.Builder(RoomsActivity.this)
                 .setTitle(R.string.sure_gr)
                 .setMessage(R.string.robot_check_gr)
                 .setPositiveButton(R.string.yes_gr, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //TODO send goal to robot
-                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                         new AlertDialog.Builder(RoomsActivity.this)
                                 .setMessage(R.string.robot_coming_gr)
                                 .setPositiveButton(R.string.ok_gr, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                                     }
                                 })
                                 .setNegativeButton(R.string.cancel_gr, new DialogInterface.OnClickListener() {
                                     //TODO cancel robot goal
                                     public void onClick(DialogInterface dialog, int which) {
-                                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                                     }
                                 })
                                 .show();
@@ -260,7 +260,7 @@ public class RoomsActivity extends RosActivity {
                 })
                 .setNegativeButton(R.string.no_gr, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                     }
                 })
                 .setIcon(android.R.drawable.ic_dialog_info)
