@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         facebook_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                 startWebViewActivity("http://www.facebook.com");
             }
         });
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         smart_home_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                 startWebViewActivity("http://dev.nassist-test.com");
             }
         });
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         exit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                 MainActivity.this.onBackPressed();
             }
         });
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         guide_me_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                 Intent intent = new Intent(MainActivity.this, RoomsActivity.class);
                 startActivity(intent);
             }
@@ -149,19 +149,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void helpMsg(View v){
-        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
         new AlertDialog.Builder(MainActivity.this)
                 .setTitle(R.string.sure_en)
                 .setMessage(R.string.doctor_check_en)
                 .setPositiveButton(R.string.yes_en, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //TODO send notification to doc!
-                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                         new AlertDialog.Builder(MainActivity.this)
                                 .setMessage(R.string.doctor_coming_en)
                                 .setPositiveButton(R.string.ok_en, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                                     }
                                 })
                                 .show();
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton(R.string.no_en, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        toneG.startTone(ToneGenerator.TONE_DTMF_7, 600);
+                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                     }
                 })
                 .setIcon(android.R.drawable.ic_dialog_info)

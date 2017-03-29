@@ -20,6 +20,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/back_en"
+        android:textAllCaps="false"
         android:drawableTop="@drawable/back2"
         android:textSize="20sp"
         android:background="#00FFFFFF"
@@ -42,7 +43,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical">
 
-            <TableRow>
+            <TableRow  android:layout_marginBottom="20dp">
 
             <Button
                 android:layout_width="wrap_content"
@@ -50,6 +51,7 @@
                 android:layout_marginEnd="25dp"
                 android:id="@+id/myroom_button"
                 android:textColor="@drawable/button_text"
+                android:textAllCaps="false"
                 android:background="#00FFFFFF"
                 android:padding="0sp"
                 android:drawableTop="@drawable/my_room"
@@ -60,9 +62,9 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
                 android:background="#00FFFFFF"
                 android:padding="0sp"
+                android:textAllCaps="false"
                 android:textColor="@drawable/button_text"
                 android:onClick="btnMsg"
                 android:id="@+id/kitchen_button"
@@ -78,6 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="0sp"
+                android:textAllCaps="false"
                 android:layout_alignStart="@id/myroom_button"
                 android:background="#00FFFFFF"
                 android:textColor="@drawable/button_text"
