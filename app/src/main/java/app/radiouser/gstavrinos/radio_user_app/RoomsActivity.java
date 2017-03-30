@@ -249,12 +249,6 @@ public class RoomsActivity extends RosActivity {
                                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                                     }
                                 })
-                                .setNegativeButton(R.string.cancel_gr, new DialogInterface.OnClickListener() {
-                                    //TODO cancel robot goal
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
-                                    }
-                                })
                                 .show();
                     }
                 })
