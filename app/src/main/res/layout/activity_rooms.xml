@@ -6,66 +6,44 @@
     android:layout_height="match_parent"
     tools:context="app.radiouser.gstavrinos.radio_user_app.RoomsActivity">
 
-    <Button
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="BACK TO HOME"
+        android:text="@string/guideme_en"
+        android:textSize="40sp"
+        android:id="@+id/title"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/back_en"
+        android:textAllCaps="false"
         android:drawableTop="@drawable/back2"
-        android:textSize="14sp"
+        android:textSize="20sp"
         android:background="#00FFFFFF"
+        android:padding="0sp"
         android:textColor="@drawable/button_text"
         android:id="@+id/back_button"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="125dp">
+        android:layout_above="@id/back_button"
+        android:layout_below="@+id/title"
+        android:fillViewport="true">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical"
             android:id="@+id/button_layout">
 
-            <!--<Button
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/myroom_button"
-                android:textColor="@drawable/button_text"
-                android:background="#00FFFFFF"
-                android:drawableTop="@drawable/my_room"
-                android:text="MY ROOM"/>
 
-            <Button
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="20dp"
-                android:background="#00FFFFFF"
-                android:layout_marginRight="20dp"
-                android:textColor="@drawable/button_text"
-                android:layout_alignParentRight="true"
-                android:id="@+id/kitchen_button"
-                android:text="KITCHEN"
-                android:drawableTop="@drawable/kitchen"/>
-
-            <Button
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="20dp"
-                android:background="#00FFFFFF"
-                android:textColor="@drawable/button_text"
-                android:layout_marginLeft="20dp"
-                android:layout_below="@+id/myroom_button"
-                android:id="@+id/common_area_button"
-                android:drawableTop="@drawable/common_area2"
-                android:text="COMMON AREA"/>-->
-
-
-        </RelativeLayout>
+        </TableLayout>
 
     </ScrollView>
 

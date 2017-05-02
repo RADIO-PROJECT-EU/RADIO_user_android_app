@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="exit_en">Exit</string>
+    <string name="yes_en">Yes</string>
+    <string name="no_en">No</string>
+    <string name="robot_coming_en">The robot is coming!</string>>
+    <string name="robot_check_en">By clicking the Yes button again the robot will come. Click No if you do not want the robot to come.</string>
+    <string name="doctor_coming_en">The doctor has been notified!</string>
+    <string name="doctor_check_en">By clicking the Yes button again we will notify the doctor. Click No if you do not want the doctor to come.</string>
+    <string name="kitchen_en">Kitchen</string>
+    <string name="my_room_en">My Room</string>
+    <string name="friends_en">Friends</string>
+    <string name="help_en">Help</string>
+    <string name="guideme_en">Guide me</string>
+    <string name="back_en">Back to Main Menu</string>
+    <string name="smarthome_en">Smart Home</string>
+    <string name="commonarea_en">Common Area</string>
+    <string name="mainmenu_en">Main Menu</string>
+    <string name="ok_en">Ok</string>
+    <string name="cancel_en">Cancel</string>
+    <string name="sure_en">Are you sure?</string>
+
+</resources>

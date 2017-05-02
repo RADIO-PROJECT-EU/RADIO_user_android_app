@@ -10,13 +10,15 @@ public class Room {
   private float x;
   private float y;
   private float z;
+  private float w;
   private String image;
 
-  public Room(String name, float x, float y, float z, String image){
+  public Room(String name, float x, float y, float z, float w, String image){
     this.name = name;
     this.x = x;
     this.y = y;
     this.z = z;
+    this.w = w;
     this.image = image;
   }
 
@@ -34,6 +36,10 @@ public class Room {
 
   public float getZ(){
     return z;
+  }
+
+  public float getW(){
+    return w;
   }
 
   public String getImage(){
@@ -58,13 +64,17 @@ public class Room {
     this.z = z;
   }
 
+  public void setW(float w){
+    this.w = w;
+  }
+
   public void getImage(String i){
     image = i;
   }
 
   // For debugging
   public String getRoom(){
-    return "Room name: "+name+"\nX: "+x+"\nY: "+y+"\nZ: "+z+"\nImage: "+image;
+    return "Room name: "+name+"\nX: "+x+"\nY: "+y+"\nZ: "+z+"\nW: "+w+"\nImage: "+image;
   }
 
 }
