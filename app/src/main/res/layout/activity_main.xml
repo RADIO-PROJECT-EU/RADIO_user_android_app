@@ -41,8 +41,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_vertical">
 
-            <TableRow android:layout_marginBottom="20dp">
-
+            <TableRow android:layout_marginBottom="10dp">
 
                 <Button
                     android:layout_width="wrap_content"
@@ -73,7 +72,6 @@
 
             <TableRow>
 
-
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -92,10 +90,8 @@
                     android:layout_height="wrap_content"
                     android:padding="0sp"
                     android:textSize="20sp"
-                    android:layout_below="@+id/facebook_button"
                     android:background="#00FFFFFF"
                     android:textAllCaps="false"
-                    android:layout_alignEnd="@id/facebook_button"
                     android:textColor="@drawable/button_text"
                     android:id="@+id/helpme_button"
                     android:onClick="helpMsg"

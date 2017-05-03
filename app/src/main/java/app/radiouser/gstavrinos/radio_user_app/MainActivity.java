@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
-                startWebViewActivity("http://dev.nassist-test.com");
+                startWebViewActivity("https://dev.encontrol.io/");
             }
         });
 

@@ -37,6 +37,7 @@ public class RoomsActivity extends RosActivity {
 
     protected RoomsActivity(){
         super("Robot connection", "Robot connection", "http://172.21.13.111:11311"); // let's assume that the main controller has this IP.
+        //super("Robot connection", "Robot connection", "http://172.17.20.116:11311"); // let's assume that the main controller has this IP.
         //startNodeExecutor();
     }
 
@@ -124,6 +125,9 @@ public class RoomsActivity extends RosActivity {
                                             }
                                             btn_cnt++;
                                         }
+                                        if(btn_cnt % 2 == 1){
+                                            rl.addView(tr, (int)Math.floor(btn_cnt/2));
+                                        }
                                     }
                                     catch (Exception e){
                                         e.printStackTrace();
@@ -194,7 +198,7 @@ public class RoomsActivity extends RosActivity {
                         node.x = r_.getX();
                         node.y = r_.getY();
                         node.z = r_.getZ();
-                        node.z = r_.getW();
+                        node.w = r_.getW();
                         node.new_goal = true;
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                         new AlertDialog.Builder(RoomsActivity.this)
