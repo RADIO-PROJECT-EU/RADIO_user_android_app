@@ -1,11 +1,11 @@
 <resources>
 
-    <string name="exit_en">Exit</string>
-    <string name="yes_en">Yes</string>
+    <string name="exit_en">Salir</string>
+    <string name="yes_en">Si</string>
     <string name="no_en">No</string>
-    <string name="robot_coming_en">The robot is coming!</string>
-    <string name="robot_check_en">By clicking the Yes button again the robot will come. Click No if you do not want the robot to come.</string>
-    <string name="doctor_coming_en">The doctor has been notified!</string>
+    <string name="robot_coming_en">El robot está viniendo!</string>>
+    <string name="robot_check_en">Al hacer clic de nuevo en el botón Sí el robot vendrá. Haga clic en No si no desea que el robot venga.</string>
+    <string name="doctor_coming_en"> El médico ha sido avisado!</string>
     <string name="doctor_check_en">By clicking the Yes button again we will notify the doctor. Click No if you do not want the doctor to come.</string>
     <string name="kitchen_en">Kitchen</string>
     <string name="my_room_en">My Room</string>
