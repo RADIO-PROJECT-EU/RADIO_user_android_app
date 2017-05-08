@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
-        android:text="@string/mainmenu_en"
+        android:text="@string/mainmenu_es"
         android:textSize="40sp"
         android:id="@+id/title"/>
 
@@ -26,7 +26,7 @@
         android:textAllCaps="false"
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
-        android:text="@string/exit_en"/>
+        android:text="@string/exit_es"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                     android:id="@+id/smart_home_button"
                     android:padding="0sp"
                     android:textAllCaps="false"
-                    android:text="@string/smarthome_en"
+                    android:text="@string/smarthome_es"
                     android:textColor="@drawable/button_text"
                     android:background="#00FFFFFF"
                     android:drawableTop="@drawable/smart_home"/>
@@ -66,7 +66,7 @@
                     android:background="#00FFFFFF"
                     android:textColor="@drawable/button_text"
                     android:drawableTop="@drawable/friends"
-                    android:text="@string/friends_en"/>
+                    android:text="@string/friends_es"/>
 
             </TableRow>
 
@@ -83,7 +83,7 @@
                     android:textColor="@drawable/button_text"
                     android:id="@+id/guide_me_button"
                     android:drawableTop="@drawable/guide_me"
-                    android:text="@string/guideme_en"/>
+                    android:text="@string/guideme_es"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -96,7 +96,7 @@
                     android:id="@+id/helpme_button"
                     android:onClick="helpMsg"
                     android:drawableTop="@drawable/help"
-                    android:text="@string/help_en"/>
+                    android:text="@string/help_es"/>
 
             </TableRow>
 

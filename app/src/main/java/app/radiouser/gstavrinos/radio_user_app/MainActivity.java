@@ -148,15 +148,15 @@ public class MainActivity extends AppCompatActivity {
     public void helpMsg(View v){
         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
         new AlertDialog.Builder(MainActivity.this)
-                .setTitle(R.string.sure_en)
-                .setMessage(R.string.doctor_check_en)
-                .setPositiveButton(R.string.yes_en, new DialogInterface.OnClickListener() {
+                .setTitle(R.string.sure_es)
+                .setMessage(R.string.doctor_check_es)
+                .setPositiveButton(R.string.yes_es, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //TODO send notification to doc!
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                         new AlertDialog.Builder(MainActivity.this)
-                                .setMessage(R.string.doctor_coming_en)
-                                .setPositiveButton(R.string.ok_en, new DialogInterface.OnClickListener() {
+                                .setMessage(R.string.doctor_coming_es)
+                                .setPositiveButton(R.string.ok_es, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                                     }
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                                 .show();
                     }
                 })
-                .setNegativeButton(R.string.no_en, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.no_es, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                     }

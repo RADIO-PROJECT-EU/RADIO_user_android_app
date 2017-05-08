@@ -13,7 +13,7 @@ public class GoalPublisher extends AbstractNodeMain implements NodeMain {
 
   public boolean new_goal = false;
   private String goal_topic = "android_app/goal";
-  private String robot_frame = "base_link";
+  private String robot_frame = "map";
   public double x, y, z, w = 0;
 
   @Override

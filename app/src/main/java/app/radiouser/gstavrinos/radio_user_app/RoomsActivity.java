@@ -191,9 +191,9 @@ public class RoomsActivity extends RosActivity {
     private void btnClick(final Room r_){
         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
         new AlertDialog.Builder(RoomsActivity.this)
-                .setTitle(R.string.sure_en)
-                .setMessage(R.string.robot_check_en)
-                .setPositiveButton(R.string.yes_en, new DialogInterface.OnClickListener() {
+                .setTitle(R.string.sure_es)
+                .setMessage(R.string.robot_check_es)
+                .setPositiveButton(R.string.yes_es, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         node.x = r_.getX();
                         node.y = r_.getY();
@@ -202,8 +202,8 @@ public class RoomsActivity extends RosActivity {
                         node.new_goal = true;
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                         new AlertDialog.Builder(RoomsActivity.this)
-                                .setMessage(R.string.robot_coming_en)
-                                .setPositiveButton(R.string.ok_en, new DialogInterface.OnClickListener() {
+                                .setMessage(R.string.robot_coming_es)
+                                .setPositiveButton(R.string.ok_es, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                                     }
@@ -211,7 +211,7 @@ public class RoomsActivity extends RosActivity {
                                 .show();
                     }
                 })
-                .setNegativeButton(R.string.no_en, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.no_es, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                     }
