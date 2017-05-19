@@ -16,6 +16,7 @@ import android.view.Window;
 import android.view.View;
 import android.os.Bundle;
 import android.os.Build;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -147,14 +148,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void helpMsg(View v){
         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
-        new AlertDialog.Builder(MainActivity.this)
+        AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
                 .setTitle(R.string.sure_es)
                 .setMessage(R.string.doctor_check_es)
                 .setPositiveButton(R.string.yes_es, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //TODO send notification to doc!
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
-                        new AlertDialog.Builder(MainActivity.this)
+                        AlertDialog dialog2 = new AlertDialog.Builder(MainActivity.this)
                                 .setMessage(R.string.doctor_coming_es)
                                 .setPositiveButton(R.string.ok_es, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
@@ -162,6 +163,9 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 })
                                 .show();
+                        TextView textView = (TextView) dialog2.findViewById(android.R.id.message);
+                        textView.setTextSize(30);
+                        dialog2.getButton(AlertDialog.BUTTON_POSITIVE).setTextSize(30);
                     }
                 })
                 .setNegativeButton(R.string.no_es, new DialogInterface.OnClickListener() {
@@ -171,6 +175,10 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setIcon(android.R.drawable.ic_dialog_info)
                 .show();
+        TextView textView = (TextView) dialog.findViewById(android.R.id.message);
+        textView.setTextSize(30);
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextSize(30);
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextSize(30);
     }
 
 }
