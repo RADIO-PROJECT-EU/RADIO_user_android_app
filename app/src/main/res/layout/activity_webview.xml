@@ -20,7 +20,7 @@
         android:layout_marginBottom="5dp"
         android:textSize="20sp"
         android:layout_centerHorizontal="true"
-        android:text="@string/back_es"
+        android:text="@string/back_gr"
         android:textAllCaps="false"
         android:textColor="@drawable/button_text"
         android:background="#00FFFFFF"

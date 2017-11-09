@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textAllCaps="false"
-        android:text="@string/mainmenu_es"
+        android:text="@string/mainmenu_gr"
         android:textSize="40sp"
         android:id="@+id/title"/>
 
@@ -26,7 +26,7 @@
         android:textAllCaps="false"
         android:background="#00FFFFFF"
         android:textColor="@drawable/button_text"
-        android:text="@string/exit_es"/>
+        android:text="@string/exit_gr"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                     android:id="@+id/smart_home_button"
                     android:padding="0sp"
                     android:textAllCaps="false"
-                    android:text="@string/smarthome_es"
+                    android:text="@string/smarthome_gr"
                     android:textColor="@drawable/button_text"
                     android:background="#00FFFFFF"
                     android:drawableTop="@drawable/smart_home"/>
@@ -66,13 +66,13 @@
                     android:background="#00FFFFFF"
                     android:textColor="@drawable/button_text"
                     android:drawableTop="@drawable/friends"
-                    android:text="@string/friends_es"/>
+                    android:text="@string/friends_gr"/>
 
             </TableRow>
 
             <TableRow>
 
-                <Button
+                <!--<Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
@@ -83,7 +83,20 @@
                     android:textColor="@drawable/button_text"
                     android:id="@+id/guide_me_button"
                     android:drawableTop="@drawable/guide_me"
-                    android:text="@string/guideme_es"/>
+                    android:text="@string/guideme_gr"/>-->
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="25dp"
+                    android:textAllCaps="false"
+                    android:padding="0sp"
+                    android:background="#00FFFFFF"
+                    android:textColor="@drawable/button_text"
+                    android:id="@+id/other_button"
+                    android:drawableTop="@drawable/guide_me"
+                    android:text="@string/keys_gr"/>
 
                 <Button
                     android:layout_width="wrap_content"
@@ -96,7 +109,7 @@
                     android:id="@+id/helpme_button"
                     android:onClick="helpMsg"
                     android:drawableTop="@drawable/help"
-                    android:text="@string/help_es"/>
+                    android:text="@string/help_gr"/>
 
             </TableRow>
 

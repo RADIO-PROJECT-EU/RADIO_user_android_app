@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".WebviewActivity" />
         <activity android:name=".RoomsActivity" />
+        <activity android:name=".OtherFunctionsActivity" />
         <activity android:name=".SettingsActivity"></activity>
     </application>
 

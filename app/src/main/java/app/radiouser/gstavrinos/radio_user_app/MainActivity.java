@@ -1,5 +1,6 @@
 package app.radiouser.gstavrinos.radio_user_app;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.net.wifi.WifiManager;
@@ -64,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         Button smart_home_button = (Button)findViewById(R.id.smart_home_button);
         Button facebook_button = (Button)findViewById(R.id.facebook_button);
         Button exit_button = (Button)findViewById(R.id.exit_button);
-        Button guide_me_button = (Button)findViewById(R.id.guide_me_button);
+        //Button guide_me_button = (Button)findViewById(R.id.guide_me_button);
+        Button other_button = (Button)findViewById(R.id.other_button);
         //Button settings_button = (Button)findViewById(R.id.settings_button);
 
         facebook_button.setOnClickListener(new View.OnClickListener() {
@@ -91,11 +93,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        guide_me_button.setOnClickListener(new View.OnClickListener() {
+        /*guide_me_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                 Intent intent = new Intent(MainActivity.this, RoomsActivity.class);
+                startActivity(intent);
+            }
+        });*/
+
+        other_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
+                Intent intent = new Intent(MainActivity.this, OtherFunctionsActivity.class);
+                intent.putExtra("command", 1);
+                intent.putExtra("text", R.string.keys_info_gr);
                 startActivity(intent);
             }
         });
@@ -118,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int checkWifiOnAndConnected() {
         try {
-            WifiManager wifiMgr = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+            @SuppressLint("WifiManagerLeak") WifiManager wifiMgr = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 
             if (wifiMgr.isWifiEnabled()) { // Wi-Fi adapter is ON
 
@@ -149,15 +162,15 @@ public class MainActivity extends AppCompatActivity {
     public void helpMsg(View v){
         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
         AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
-                .setTitle(R.string.sure_es)
-                .setMessage(R.string.doctor_check_es)
-                .setPositiveButton(R.string.yes_es, new DialogInterface.OnClickListener() {
+                .setTitle(R.string.sure_gr)
+                .setMessage(R.string.doctor_check_gr)
+                .setPositiveButton(R.string.yes_gr, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         //TODO send notification to doc!
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                         AlertDialog dialog2 = new AlertDialog.Builder(MainActivity.this)
-                                .setMessage(R.string.doctor_coming_es)
-                                .setPositiveButton(R.string.ok_es, new DialogInterface.OnClickListener() {
+                                .setMessage(R.string.doctor_coming_gr)
+                                .setPositiveButton(R.string.ok_gr, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                                     }
@@ -168,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                         dialog2.getButton(AlertDialog.BUTTON_POSITIVE).setTextSize(30);
                     }
                 })
-                .setNegativeButton(R.string.no_es, new DialogInterface.OnClickListener() {
+                .setNegativeButton(R.string.no_gr, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         toneG.startTone(ToneGenerator.TONE_PROP_NACK, 600);
                     }

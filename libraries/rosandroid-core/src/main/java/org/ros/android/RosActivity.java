@@ -24,6 +24,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.AsyncTask;
 import android.os.IBinder;
+
 import org.ros.exception.RosRuntimeException;
 import org.ros.node.NodeMain;
 import org.ros.node.NodeMainExecutor;
@@ -61,9 +62,9 @@ public abstract class RosActivity extends Activity {
     @Override
     public void onServiceDisconnected(ComponentName name) {
     }
-  };
+  }
 
-  protected RosActivity(String notificationTicker, String notificationTitle, String masterUri) {
+  public RosActivity(String notificationTicker, String notificationTitle, String masterUri) {
     super();
     this.notificationTicker = notificationTicker;
     this.notificationTitle = notificationTitle;
@@ -135,6 +136,6 @@ public abstract class RosActivity extends Activity {
    * @param nodeMainExecutor
    *          the {@link NodeMainExecutor} created for this {@link android.app.Activity}
    */
-  protected abstract void init(NodeMainExecutor nodeMainExecutor);
+  public abstract void init(NodeMainExecutor nodeMainExecutor);
 
 }

@@ -19,5 +19,7 @@
     <string name="ok_en">Ok</string>
     <string name="cancel_en">Cancel</string>
     <string name="sure_en">Are you sure?</string>
+    <string name="keys_en">Find my keys!</string>
+    <string name="keys_info_en">The robot is heading to the room the keys are located!</string>
 
 </resources>

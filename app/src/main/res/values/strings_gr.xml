@@ -19,5 +19,7 @@
     <string name="ok_gr">Εντάξει</string>
     <string name="cancel_gr">Ακύρωση</string>
     <string name="sure_gr">Είστε σίγουροι;</string>
+    <string name="keys_gr">Βρες τα κλειδιά μου!</string>
+    <string name="keys_info_gr">Το ρομπότ κατευθύνεται στο δωμάτιο που βρίσκονται τα κλειδιά!</string>
 
 </resources>

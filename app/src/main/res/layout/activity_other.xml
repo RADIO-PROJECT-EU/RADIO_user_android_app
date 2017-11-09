@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/back_gr"
+        android:textAllCaps="false"
+        android:drawableTop="@drawable/back2"
+        android:textSize="20sp"
+        android:background="#00FFFFFF"
+        android:padding="0sp"
+        android:textColor="@drawable/button_text"
+        android:id="@+id/back_button"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:textSize="35dp"
+        android:id="@+id/mid_text"/>
+
+</RelativeLayout>

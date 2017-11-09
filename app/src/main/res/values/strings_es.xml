@@ -19,5 +19,8 @@
     <string name="ok_es">Ok</string>
     <string name="cancel_es">Cancelar</string>
     <string name="sure_es">Está seguro?</string>
+    <string name="keys_es">¡Encuentra mis llaves!</string>
+    <string name="keys_info_es">¡El robot se dirige a la sala donde se encuentran las llaves!</string>
+
 
 </resources>

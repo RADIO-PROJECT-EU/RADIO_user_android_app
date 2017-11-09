@@ -5,8 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/RADIO_user_android_app.iml" filepath="$PROJECT_DIR$/RADIO_user_android_app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/rosandroid-core/rosandroid-core.iml" filepath="$PROJECT_DIR$/libraries/rosandroid-core/rosandroid-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/rosandroid-core/rosandroid-core.iml" filepath="$PROJECT_DIR$/libraries/rosandroid-core/rosandroid-core.iml" />
     </modules>
   </component>
