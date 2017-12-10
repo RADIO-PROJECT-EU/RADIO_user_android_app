@@ -27,7 +27,7 @@ public class OtherFunctionsActivity extends RosActivity {
         ToneGenerator toneG;
 
         public OtherFunctionsActivity(){
-            super("Robot connection", "Robot connection", /*"http://192.168.2.216:11311"*/"http://172.17.20.116:11311");
+            super("Robot connection", "Robot connection", "http://192.168.2.216:11311");
         }
 
         @Override
